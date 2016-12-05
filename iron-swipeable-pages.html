@@ -179,7 +179,6 @@ Note: if you are using a `<paper-drawer-panel>`, it might be wise to use the fol
           'iron-items-changed': '_onItemsChanged',
           'iron-deselect': '_onIronDeselectItem',
           'iron-select': '_onIronSelectItem',
-          'dom-change': '_onDomChange',
           'track': '_onTrack',
         },
 
@@ -214,12 +213,6 @@ Note: if you are using a `<paper-drawer-panel>`, it might be wise to use the fol
               return;
             this.unlisten(page, 'webkitTransitionEnd', '_onTransitionEnd');
             this.unlisten(page, 'transitionend', '_onTransitionEnd');
-        },
-
-        _onDomChange: function(event) {
-          if ( this.selectedItem && this.selectedItem.offsetWidth == 0 ) {
-            this.selected = this.fallbackSelection;
-          }
         },
 
         // Element tracking
